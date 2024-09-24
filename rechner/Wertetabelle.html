@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Tabelle bauen</title>
+			</head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			"use strict";
+			function programm() {
+			// Quellcode
+
+			var vAnzahl;
+			var vAusgabe;
+			var vX;
+			var vY;
+
+			vX = -3; //Start
+
+			vAnzahl = document.getElementById("idAnzahl").value; // Anzahl der Zeilen die berechnet werden sollen (Endwert)
+
+			vAusgabe = "";
+			vAusgabe = vAusgabe + "<table border=1>"; // Rahmen der Tabelle 
+			vAusgabe = vAusgabe + "<tr><th> x </td><th>f(x) = x<sup>2</sup></td></tr>"; //Außerhalb der Schleife!
+
+			while (vX <=vAnzahl) { 
+				vY = vX*vX; // Berechnung der Funktion g(x)= x*x
+	
+				vAusgabe = vAusgabe + "<tr><td>" + vX + "</td><td>" + vY + "</td></tr>";
+				
+				vX = vX + 1; // Alternativ vX++;
+}
+			vAusgabe = vAusgabe + "</table>";
+
+			document.getElementById("divAusgabe").innerHTML = vAusgabe;
+		}
+
+		</script>
+
+
+	<body>
+		<h1>Mathematische Funktion (Wertetabelle) </h1>
+        x läuft von <input id="idAnzahl" type="text" value="">
+		<button onClick="programm();">Wertetabelle erzeugen!</button><br /><br />
+        <div id="divAusgabe">Button klicken!</div>
+	</body>
+</html>
